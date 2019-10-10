@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DirectionsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4rO-bO-o6B">
+                                <rect key="frame" x="0.0" y="199" width="414" height="663"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="NXU-sF-evW">
+                                <rect key="frame" x="15" y="59" width="384" height="140"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Source City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6l-eD-Ulm">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qon-Mi-vRW">
+                                        <rect key="frame" x="0.0" y="55" width="384" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUe-Ey-oLc">
+                                        <rect key="frame" x="0.0" y="110" width="384" height="30"/>
+                                        <state key="normal" title="Find Routes">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routesAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="IzJ-Rd-cp9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="oZJ-bt-r8B">
+                                <rect key="frame" x="187" y="490.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="3nr-3S-mK5"/>
+                                    <constraint firstAttribute="height" constant="40" id="EbE-Il-bfE"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YgH-Dt-7il">
+                                <rect key="frame" x="20" y="822" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2t-wZ-aec">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
+                                        <state key="normal" title="Pickup"/>
+                                        <connections>
+                                            <action selector="pickUpLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVb-yq-UI9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkv-Lx-gZ5">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="40"/>
+                                        <state key="normal" title="Drop"/>
+                                        <connections>
+                                            <action selector="pickUpLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tq-dM-pww"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wFT-pQ-j47"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4rO-bO-o6B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="54K-nb-xrp"/>
+                            <constraint firstItem="4rO-bO-o6B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8sb-BX-j71"/>
+                            <constraint firstItem="4rO-bO-o6B" firstAttribute="top" secondItem="NXU-sF-evW" secondAttribute="bottom" id="BQj-Nh-nwk"/>
+                            <constraint firstItem="NXU-sF-evW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="DmG-kH-xsN"/>
+                            <constraint firstItem="4rO-bO-o6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ky1-dd-PTH"/>
+                            <constraint firstItem="oZJ-bt-r8B" firstAttribute="centerY" secondItem="4rO-bO-o6B" secondAttribute="centerY" constant="-20" id="LbD-v7-0dQ"/>
+                            <constraint firstItem="NXU-sF-evW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Qz9-wF-YPp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YgH-Dt-7il" secondAttribute="bottom" id="VU7-Jd-c5U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YgH-Dt-7il" secondAttribute="trailing" constant="20" id="Xfv-aE-D1j"/>
+                            <constraint firstItem="YgH-Dt-7il" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fKr-AL-jfP"/>
+                            <constraint firstItem="oZJ-bt-r8B" firstAttribute="centerX" secondItem="4rO-bO-o6B" secondAttribute="centerX" id="ffc-bv-Qua"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NXU-sF-evW" secondAttribute="trailing" constant="15" id="mQ9-Aw-Knh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="destinationCity" destination="qon-Mi-vRW" id="94s-dX-FTH"/>
+                        <outlet property="dropBtn" destination="jkv-Lx-gZ5" id="Lho-9w-RWV"/>
+                        <outlet property="map" destination="4rO-bO-o6B" id="BOV-dq-eq9"/>
+                        <outlet property="pickUpBtn" destination="T2t-wZ-aec" id="vxc-1w-tXE"/>
+                        <outlet property="sourceCity" destination="O6l-eD-Ulm" id="amI-wK-Rr1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pin" width="10.5" height="10.5"/>
+    </resources>
+</document>
